@@ -284,8 +284,7 @@ Resources:
       MinSize: 2
       MaxSize: 4
       DesiredCapacity: 2
-      LoadBalancerNames:
-        - !Ref myLoadBalancer
+
       HealthCheckGracePeriod: 300
       TargetGroupARNs:
         - !Ref myTargetGroup
