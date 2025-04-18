@@ -270,8 +270,10 @@ Resources:
 
   # creating Autoscaling group to launch ec2 instance in private subnets
   MyAutoScalingGroup:
+    
     Type: AWS::AutoScaling::AutoScalingGroup
     # vpcId: !Ref MyVpc
+    DependsOn: myLaunchTemplate
     Properties:
       VPCZoneIdentifier:
         - !Ref privateSubnet1
