@@ -208,7 +208,7 @@ Resources:
         InstanceType: t3.micro
         ImageId: ami-0c1ac8a41498c1a9c
         KeyName: zakir-aws-login-key
-        SecurityGroups:
+        SecurityGroupIds:
           - !Ref AppServerSG
         UserData:
           Fn::Base64: !Sub |
