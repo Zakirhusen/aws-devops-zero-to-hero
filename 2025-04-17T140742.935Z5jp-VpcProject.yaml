@@ -224,7 +224,7 @@ Resources:
             </html>
             EOF
             cd /home/ubuntu
-            sudo puthon3 -m http.server 80
+            sudo python3 -m http.server 80
   
   myLoadBalancer:
     Type: AWS::ElasticLoadBalancingV2::LoadBalancer
@@ -279,7 +279,7 @@ Resources:
         - !Ref privateSubnet1
         - !Ref privateSubnet2
       LaunchTemplate:
-        LaunchTemplateName: !Ref myLaunchTemplate
+        LaunchTemplateName: myLaunchTemplate
         Version: !GetAtt myLaunchTemplate.LatestVersionNumber 
       MinSize: 2
       MaxSize: 4
