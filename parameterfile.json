@@ -1,12 +1,3 @@
-{
-  "parameters": [
-    {
-      "parameterKey": "VpcCIDR",
-      "parameterValue": "10.0.0.0/16"
-    },
-    {
-      "parameterKey": "Environment",
-      "parameterValue": "dev"
-    }
-  ]
-}
+template-file-path: 2025-04-17T140742.935Z5jp-VpcProject.yaml
+parameters: {}
+tags: {}
