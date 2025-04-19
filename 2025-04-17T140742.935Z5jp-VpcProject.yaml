@@ -234,7 +234,7 @@ Resources:
         - !Ref publicSubnet1
         - !Ref publicSubnet2
       SecurityGroups:
-        - !Ref BastionHostSG
+        - !Ref AppServerSG
       Scheme: internet-facing
       Tags:
         - Key: Name
@@ -270,10 +270,9 @@ Resources:
 
   # creating Autoscaling group to launch ec2 instance in private subnets
   MyAutoScalingGroup:
-    
+  
     Type: AWS::AutoScaling::AutoScalingGroup
     # vpcId: !Ref MyVpc
-    DependsOn: myLaunchTemplate
     Properties:
       VPCZoneIdentifier:
         - !Ref privateSubnet1
@@ -284,17 +283,17 @@ Resources:
       MinSize: 2
       MaxSize: 4
       DesiredCapacity: 2
-
       HealthCheckGracePeriod: 300
       TargetGroupARNs:
         - !Ref myTargetGroup
       Tags:
         - Key: Name
-          Value: MyAutoScalingGroup
+          Value: AppServer
           PropagateAtLaunch: true
           
 # outputs
 Outputs:
+  
   loadBalancerDNSName:
     Value: !GetAtt myLoadBalancer.DNSName
     Description: Load Balancer DNS Name
