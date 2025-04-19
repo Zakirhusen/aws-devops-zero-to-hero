@@ -297,6 +297,9 @@ Outputs:
   loadBalancerDNSName:
     Value: !GetAtt myLoadBalancer.DNSName
     Description: Load Balancer DNS Name
+  loadBalancerDNS:
+    Value: !GetAtt myLoadBalancer.DNSName
+    Description: Load Balancer DNS Name
   VpcId:
     Value: !Ref MyVpc
     Description: VPC ID
